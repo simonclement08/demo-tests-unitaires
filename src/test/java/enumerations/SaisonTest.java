@@ -1,4 +1,5 @@
 package enumerations;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -17,12 +18,18 @@ public class SaisonTest {
 				Saison.valueOfLibelle("Automne"));
 
 		assertEquals("La saison avec le libéllé 'Hiver' est bien HIVER", Saison.HIVER, Saison.valueOfLibelle("Hiver"));
+	}
 
-		assertNull("Il n'y a pas de saison avec le libellé 'hiver'", Saison.valueOfLibelle("hiver"));
-		
-		assertNull("Il n'y a pas de saison avec le libellé '5'", Saison.valueOfLibelle("5"));
-		
+	@Test
+	public void testValueOfLibelleNull() {
 		assertNull(Saison.valueOfLibelle(null));
+	}
+
+	@Test
+	public void testValueOfLibelleWrong() {
+		assertNull("Il n'y a pas de saison avec le libellé 'hiver'", Saison.valueOfLibelle("hiver"));
+
+		assertNull("Il n'y a pas de saison avec le libellé '5'", Saison.valueOfLibelle("5"));
 	}
 
 }
