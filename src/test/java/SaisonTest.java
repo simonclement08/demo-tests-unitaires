@@ -20,6 +20,8 @@ public class SaisonTest {
 		assertNull("Il n'y a pas de saison avec le libellé 'hiver'", Saison.valueOfLibelle("hiver"));
 		
 		assertNull("Il n'y a pas de saison avec le libellé '5'", Saison.valueOfLibelle("5"));
+		
+		assertNull(Saison.valueOfLibelle(null));
 	}
 
 }
